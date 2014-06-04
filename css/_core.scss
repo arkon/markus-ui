@@ -10,6 +10,44 @@ body {
 }
 
 
+/** Custom scrollbars in WebKit-based browsers */
+
+::-webkit-scrollbar {
+  height: 10px;
+  width: 10px;
+}
+
+::-webkit-scrollbar-button {
+  &:start:decrement,
+  &:end:increment {
+    background-color: $white;
+    display: block;
+    height: 0;
+  }
+}
+
+::-webkit-scrollbar-track-piece {
+  background-color: $white;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: $grey;
+  border-radius: 8px;
+
+  &:hover {
+    background-color: $blue;
+  }
+
+  &:vertical {
+    height: 50px;
+  }
+
+  &:horizontal {
+    width: 50px;
+  }
+}
+
+
 /** Headings */
 
 h1 {
@@ -169,6 +207,61 @@ fieldset {
     position: absolute;
     top: 0em;
     left: 1em;
+  }
+}
+
+
+/** Tables */
+
+table {
+  border-left: 1px solid $grey;
+  border-top: 1px solid $grey;
+  width: 100%;
+
+  thead {
+    background-color: $light-grey;
+    border-bottom: 2px solid $grey;
+    font-weight: 600;
+    text-transform: uppercase;
+
+    .asc,
+    .des {
+      cursor: pointer;
+
+      &::after {
+        padding-left: 0.5em;
+      }
+    }
+
+    .asc::after, {
+      content: "▲";
+    }
+
+    .des::after {
+      content: "▼";
+    }
+  }
+
+  tr {
+    border-bottom: 1px solid $grey;
+
+    td {
+      border-right: 1px solid $grey;
+      padding: 0.5em 1em;
+    }
+  }
+
+  tbody {
+    tr {
+      &:nth-child(odd) {
+        background-color: $white;
+      }
+
+      &:nth-child(even) {
+        background-color: $light-grey;
+      }
+
+    }
   }
 }
 
