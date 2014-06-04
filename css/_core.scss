@@ -1,0 +1,189 @@
+@import 'reset';
+@import 'constants';
+@import 'mixins';
+
+/** Main */
+
+body {
+  font: 400 16px/24px $fonts;
+  color: $dark-grey;
+}
+
+
+/** Headings */
+
+h1 {
+  font: 300 2.5em $fonts;
+}
+
+h2 {
+  font: 300 2em $fonts;
+}
+
+h3 {
+  font: 400 1.5em $fonts;
+}
+
+
+/** Paragraphs */
+
+p + p {
+  margin-bottom: 1.125em;
+}
+
+
+/** Links */
+
+a {
+  @include transition(all, $time-quick);
+  color: $dark-blue;
+  text-decoration: none;
+
+  &:hover {
+    color: $blue;
+  }
+}
+
+
+/** Alert messages */
+
+.alert {
+  @include border-radius($radius);
+  display: block;
+  padding: 0.25em;
+  width: 100%;
+}
+
+.error {
+  @extend .alert;
+  background: $light-red;
+  border: 1px solid $red;
+}
+
+.warning {
+  @extend .alert;
+  background: $light-yellow;
+  border: 1px solid $yellow;
+}
+
+.success {
+  @extend .alert;
+  background: $light-green;
+  border: 1px solid $green;
+}
+
+
+/** Text field inputs */
+
+input,
+textarea {
+  @include border-radius($radius);
+  @include transition(all, $time-quick);
+  background: $light-grey;
+  border: 1px solid $grey;
+  color: $dark-grey;
+  font: 400 1em $fonts;
+  outline: none;
+  padding: 0.5em 0.75em;
+  width: 100%;
+
+  &:hover {
+    background-color: $white;
+    border-color: $dark-blue;
+  }
+
+  &:focus {
+    background-color: $white;
+    border-color: $blue;
+  }
+
+  &[disabled] {
+    background-color: $disabled-grey;
+    border-color: $disabled-dark;
+    color: $disabled-dark;
+  }
+
+  &.large-text {
+    padding: 1em 1.15em;
+  }
+}
+
+
+/** Buttons */
+button {
+  @include background-gradient($white, $light-grey);
+  @include border-radius($radius);
+  @include box-shadow(inset 0 -1px 0 $grey);
+  @include transition(all, $time-quick);
+  border: 1px solid $blue;
+  color: $dark-grey;
+  font: 400 1em $fonts;
+  min-width: 175px;
+  outline: none;
+  padding: 0.5em 1.5em;
+  text-shadow: 0 1px 0 $white;
+
+  &:hover {
+    @include box-shadow(inset 0 -1px 0 $grey, 0 1px 0 $light-grey);
+    border-color: $dark-blue;
+    color: $dark-blue;
+  }
+
+  &:active {
+    @include background-gradient($light-grey, $white);
+    @include box-shadow(none);
+    color: $dark-blue;
+  }
+
+  &[disabled] {
+    @include background-gradient($light-grey, $disabled-grey);
+    @include box-shadow(none);
+    border-color: $disabled-dark;
+    color: $disabled-dark;
+  }
+
+  &.large-button {
+    min-width: 200px;
+    padding: 0.75em 2em;
+  }
+
+  &.inline-button {
+    min-width: 125px;
+    padding: 0.25em 1em;
+  }
+}
+
+
+/** Fieldset */
+
+fieldset {
+  @include border-radius($radius);
+  @include box-shadow(0 3px 0 $grey);
+  background: $white;
+  border: none;
+  padding: 2.5em 1em 1em;
+  position: relative;
+
+  legend {
+    @extend h3;
+    position: absolute;
+    top: 0em;
+    left: 1em;
+  }
+}
+
+
+
+/** Dialog modal windows */
+
+.dialog {
+  @include border-radius($radius);
+  @include box-shadow(0 0 10px $grey);
+  background: $white;
+  padding: 2.5em 1.5em;
+
+  .dialog-actions {
+    text-align: center;
+    margin-top: 1.5em;
+  }
+}
