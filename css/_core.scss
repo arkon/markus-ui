@@ -274,30 +274,54 @@ input[type='radio'] {
   & + label span {
     cursor: pointer;
     display: inline-block;
-    height: 19px;
+    height: 22px;
     margin: -4px 4px 0 0;
     vertical-align: middle;
-    width: 19px;
+    width: 26px;
   }
 }
 
-input[type='checkbox'] {
-  & + label span {
-    background: url(../img/check_radio_sheet.png) left top no-repeat;
-  }
-
-  &:checked + label span {
-    background: url(../img/check_radio_sheet.png) -19px top no-repeat;
-  }
-}
-
+input[type='checkbox'],
 input[type='radio'] {
   & + label span {
-    background: url(../img/check_radio_sheet.png) -38px top no-repeat;
+    background-position: -52px top;
+    background-repeat: no-repeat;
+    background-size: auto 22px;
+  }
+
+  & + label:hover span {
+    background-position: -26px top;
   }
 
   &:checked + label span {
-    background: url(../img/check_radio_sheet.png) -57px top no-repeat;
+    background-position: 0px top;
+  }
+
+  &[disabled] + label span {
+    background-position: -104px top;
+  }
+
+  &[disabled]:checked + label span {
+    background-position: -78px top;
+  }
+}
+
+input[type='checkbox'] + label span {
+  background-image: url(../img/check.png);
+}
+
+input[type='radio'] + label span {
+  background-image: url(../img/radio.png);
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 2),
+screen and (max-moz-device-pixel-ratio: 2) {
+  input[type='checkbox'] + label span {
+    background-image: url(../img/check@2x.png);
+  }
+
+  input[type='radio'] + label span {
+    background-image: url(../img/radio@2x.png);
   }
 }
 
