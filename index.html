@@ -34,17 +34,18 @@
   <div class='column'>
     <section class='about' id='about'>
       <p>
-        This is the official UI style guide for the MarkUs project.
+        This is the official UI style guide for <a href='http://www.markusproject.org/'>the MarkUs Project</a>.
       </p>
       <p>
         You'll find various core elements used around MarkUs on this page, along with helpful code snippets so you can use them easily. Please adhere to the style shown on this page in order to keep MarkUs as cohesive as possible.
       </p>
       <p>
-        The production version of the styles for the core elements shown on this page can be <a href='#'>downloaded here as a package of SCSS partial files and required JavaScript files</a>. You can simply import <span class='code'>_core.scss</span> into another SCSS file! You'll also need to include the JavaScript files.
+        The production version of the styles for the core elements shown on this page can be <a href='#'>downloaded here as a package of SCSS partial files and required JavaScript files</a>. You can simply import <span class='code'>_core.scss</span> into another SCSS file! You'll also need to include the JavaScript files into the head of your HTML files.
       </p>
       <p>
         If you're interested in seeing the code, you're welcome to check out <a href='https://github.com/arkon94/markus-style'>the GitHub repo</a>.
       </p>
+      <p>Last updated June 2014.</p>
     </section>
     <section class='colours' id='colours'>
       <h1>Colours</h1>
@@ -220,42 +221,78 @@
         </div>
       </section>
       <section id='other'>
-        <section id='checkboxes'>
-        </section>
-        <section id='radio-buttons'>
-        </section>
         <section id='fieldset'>
           <fieldset>
             <legend><span>This is a fieldset</span></legend>
             <div id='checkboxes'>
-              <input type='checkbox' id='chk-checked' name='cc' checked>
-              <label for='chk-checked'><span></span>Checked</label>
-              <input type='checkbox' id='chk-hover' name='cc'>
-              <label for='chk-hover'><span></span>Hover</label>
-              <input type='checkbox' id='chk-unchecked' name='cc'>
-              <label for='chk-unchecked'><span></span>Unchecked</label>
-            </div>
-            <div id='disabled-checkboxes'>
-              <input type='checkbox' id='dis-chk-checked' name='dis-cc' checked disabled>
-              <label for='dis-chk-checked'><span></span>Disabled checked</label>
-              <input type='checkbox' id='dis-chk-unchecked' name='dis-cc' disabled>
-              <label for='dis-chk-unchecked'><span></span>Disabled unchecked</label>
+              <h4>Check boxes</h4>
+              <div class='div-table'>
+                <table>
+                  <tr>
+                    <td>
+                      <input type='checkbox' id='chk-checked' name='cc' checked>
+                      <label for='chk-checked'><span></span>Checked</label>
+                    </td>
+                    <td>
+                      <input type='checkbox' id='dis-chk-checked' name='dis-cc' checked disabled>
+                      <label for='dis-chk-checked'><span></span>Disabled checked</label>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <input type='checkbox' id='chk-hover' name='cc'>
+                      <label for='chk-hover'><span></span>Hover</label>
+                    </td>
+                    <td>
+                      <input type='checkbox' id='dis-chk-unchecked' name='dis-cc' disabled>
+                      <label for='dis-chk-unchecked'><span></span>Disabled unchecked</label>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <input type='checkbox' id='chk-unchecked' name='cc'>
+                      <label for='chk-unchecked'><span></span>Unchecked</label>
+                    </td>
+                    <td></td>
+                  </tr>
+                </table>
+              </div>
             </div>
             <fieldset>
               <legend><span>With another fieldset inside it</span></legend>
               <div id='radio-buttons'>
-                <input type='radio' id='rd-checked' name='radio' checked>
-                <label for='rd-checked'><span></span>Selected</label>
-                <input type='radio' id='rd-hover' name='radio'>
-                <label for='rd-hover'><span></span>Hover</label>
-                <input type='radio' id='rd-unselected' name='radio'>
-                <label for='rd-unselected'><span></span>Unselected</label>
-              </div>
-              <div id='disabled-radio-buttons'>
-                <input type='radio' id='dis-rd-checked' name='dis-radio' checked disabled>
-                <label for='dis-rd-checked'><span></span>Disabled selected</label>
-                <input type='radio' id='dis-rd-unselected' name='dis-radio' disabled>
-                <label for='dis-rd-unselected'><span></span>Disabled unselected</label>
+                <h4>Radio buttons</h4>
+                <div class='div-table'>
+                  <table>
+                    <tr>
+                      <td>
+                        <input type='radio' id='rd-checked' name='radio' checked>
+                        <label for='rd-checked'><span></span>Selected</label>
+                      </td>
+                      <td>
+                        <input type='radio' id='dis-rd-checked' name='dis-radio' checked disabled>
+                        <label for='dis-rd-checked'><span></span>Disabled selected</label>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <input type='radio' id='rd-hover' name='radio'>
+                        <label for='rd-hover'><span></span>Hover</label>
+                      </td>
+                      <td>
+                        <input type='radio' id='dis-rd-unselected' name='dis-radio' disabled>
+                        <label for='dis-rd-unselected'><span></span>Disabled unselected</label>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <input type='radio' id='rd-unselected' name='radio'>
+                        <label for='rd-unselected'><span></span>Unselected</label>
+                      </td>
+                      <td></td>
+                    </tr>
+                  </table>
+                </div>
               </div>
             </fieldset>
             <fieldset>
@@ -318,6 +355,16 @@
     <section class='misc' id='misc'>
       <h1>Miscellaneous</h1>
       <h4>Dropdown</h4>
+      <span class='dropdown'>
+        Hello world
+        <ul>
+          <li class='section'>Quick links</li>
+          <li>Liure wey</li>
+          <li>Ovay iuop</li>
+          <li>Ish mein brokt</li>
+          <li>Separo enum</li>
+        </ul>
+      </span>
     </section>
   </div><div class='column'>
     <section class='typography' id ='typography'>
@@ -357,10 +404,10 @@
         Body: 16px baseline, 1.5em (24px) line height, 1.125em (18px) paragraph, normal weight (400).
       </p>
       <p>
-        Bitters fanny pack try-hard salvia, tattooed shabby chic gastropub Brooklyn 3 wolf moon asymmetrical. Banjo Williamsburg stumptown paleo, mustache McSweeney's narwhal letterpress four loko. Viral messenger bag meggings normcore Wes Anderson, McSweeney's tousled meh hella.
+        Make sure to include the Open Sans web font! You can just add this into your HTML head: <span class='code code-example'>&lt;link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600'&gt;</span>.
       </p>
       <p>
-        Neutra keytar Pinterest, cray typewriter mixtape kale chips Portland freegan readymade plaid meh Banksy. Truffaut post-ironic gentrify, artisan farm-to-table selvage Marfa messenger bag Shoreditch freegan lo-fi <a href='#'>disrupt gluten-free butcher Banksy</a>.
+        Links <a href='#'>are shown in blue</a>.
       </p>
       <h4>Code</h4>
       <pre class='code-example'>&lt;pre&gt;Code should be shown in a monospace font like this. Use an additional plugin of your choice to perform syntax highlighting and HTML cleanup.&lt;/pre&gt;</pre>
@@ -455,7 +502,7 @@
               <span class='right'>42</span>
             </li>
             <li>
-              Wow
+              These are sortable via drag and drop
               <span class='right'>1.0</span>
             </li>
           </ul>
@@ -490,26 +537,27 @@
     </section>
     <section class='dialogs' id='dialogs'>
       <h1>Dialogs</h1>
-      <div class='dialog'>
+      <aside class='dialog'>
         <h2>This is a dialog modal</h2>
-        <p>
-          This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue.
-        </p>
         <p>
           The window should also have an overlay of <span class='code'>#464646</span> at 60%, or <span class='code'>rgba(70,70,70,.6)</span>, behind the dialog box.
         </p>
         <p>
           The dialog has a box shadow of <span class='code'>#8d8d8d</span> at a size of 10px from the origin.
         </p>
+        <pre class='code-example'>&lt;aside class='dialog'&gt;
+  &lt;h2&gt;Dialog title&lt;/h2&gt;
+  &lt;p&gt;Some content&lt;/p&gt;
+
+  &lt;section class='dialog-actions'&gt;
+    &lt;button&gt;Centred buttons&lt;/button&gt;
+  &lt;/section&gt;
+&lt;/aside&gt;</pre>
         <div class='dialog-actions'>
           <button>Centred buttons</button>
+          <button>Close</button>
         </div>
-      </div>
-    </section>
-    <section class='foot'>
-      <p><a href='http://www.markusproject.org/'>The MarkUs Project</a></p>
-      <p><a href='http://www.echeung.me/'>Designed by Eugene Cheung</a></p>
-      <p>Last updated June 2014</p>
+      </aside>
     </section>
   </div>
 </body>

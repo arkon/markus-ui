@@ -71,6 +71,7 @@ pre {
 
 .div-table {
   overflow-x: auto;
+  overflow-y: hidden;
   width: 100%;
 }
 
@@ -253,6 +254,11 @@ section {
       #regular,
       #semibold {
         font-size: 1.75em;
+
+        @include breakpoint(medium) {
+          display: block;
+          margin-top: 0.5em;
+        }
       }
 
       #regular {
@@ -281,15 +287,5 @@ section {
     h4 {
       border: none;
     }
-  }
-}
-
-.foot,
-.foot a {
-  color: $grey;
-  text-align: right;
-
-  @include breakpoint(medium) {
-    text-align: center;
   }
 }
