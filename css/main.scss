@@ -67,6 +67,11 @@ pre {
   }
 }
 
+.div-table {
+  overflow-x: auto;
+  width: 100%;
+}
+
 table {
   width: 100%;
 
@@ -157,11 +162,6 @@ section {
     .code-example {
       text-align: left;
     }
-
-    div {
-      // margin: 1em 0.5em;
-      // width: 200px;
-    }
   }
 }
 
@@ -187,22 +187,6 @@ section {
     & > section {
       @extend .col;
     }
-
-    // #large-text-fields {
-    //   width: 50%
-    // }
-
-    // #normal-text-fields {
-    //   width: 40%;
-    // }
-
-    // #large-text-fields,
-    // #normal-text-fields {
-    //   @include breakpoint(small) {
-    //     display: block;
-    //     width: 100%;
-    //   }
-    // }
   }
 
   #buttons {
@@ -215,25 +199,8 @@ section {
       @extend .col;
     }
 
-    #large-buttons {
-      width: 40%;
-    }
-
-    #normal-buttons {
-      width: 35%;
-    }
-
-    #inline-buttons {
-      width: 20%;
-    }
-
-    #large-buttons,
-    #normal-buttons,
-    #inline-buttons {
-      @include breakpoint(small) {
-        display: block;
-        width: 100%;
-      }
+    .div-table {
+      margin-bottom: 1.5em;
     }
 
     #hover {
@@ -317,4 +284,8 @@ section {
 .foot a {
   color: $grey;
   text-align: right;
+
+  @include breakpoint(medium) {
+    text-align: center;
+  }
 }
