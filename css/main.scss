@@ -20,6 +20,8 @@ header {
 
   nav {
     ul {
+      padding: 0;
+
       li {
         display: inline-block;
         list-style: none;
@@ -220,6 +222,8 @@ section {
 
 .typography {
   #fonts {
+    // white-space: pre-line;
+
     h1 {
       border: none;
       padding: 0;

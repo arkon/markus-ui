@@ -10,6 +10,9 @@
   <!--[if lt IE 9]>
     <script src='http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js'></script>
   <![endif]-->
+  <script src='js/jquery-2.1.1.min.js'></script>
+  <script src='js/jquery.sortable.min.js'></script>
+  <script src='js/script.js'></script>
 </head>
 <body>
   <header>
@@ -37,7 +40,10 @@
         You'll find various core elements used around MarkUs on this page, along with helpful code snippets so you can use them easily. Please adhere to the style shown on this page in order to keep MarkUs as cohesive as possible.
       </p>
       <p>
-        The styles for the core elements shown on this page can be <a href='#'>downloaded here as a package of SCSS partial files</a>. Simply import <span class='code'>_core.scss</span> into another SCSS file!
+        The production version of the styles for the core elements shown on this page can be <a href='#'>downloaded here as a package of SCSS partial files and required JavaScript files</a>. You can simply import <span class='code'>_core.scss</span> into another SCSS file! You'll also need to include the JavaScript files.
+      </p>
+      <p>
+        If you're interested in seeing the code, you're welcome to check out <a href='https://github.com/arkon94/markus-style'>the GitHub repo</a>.
       </p>
     </section>
     <section class='colours' id='colours'>
@@ -274,8 +280,40 @@
     </section>
     <section class='tags' id='tags'>
       <h1>Tags</h1>
-      <h4>Pillbox</h4>
-      <h4>Dropdown</h4>
+      <div id='tags-pillbox'>
+        <h4>Pillbox</h4>
+        <ul class='pills'>
+          <li>
+            Lorem
+          </li>
+        </ul>
+      </div>
+      <div id='tags-drop'>
+        <h4>Dropdown</h4>
+        <ul class='tags'>
+          <li>
+            Verut
+            <ul>
+              <li>Liure wey</li>
+              <li>Ovay iuop</li>
+              <li>Ish mein brokt</li>
+              <li>Separo enum</li>
+            </ul>
+          </li>
+          <li>
+            Lorem
+            <ul>
+              <li>Separo enum</li>
+              <li>Ish mein brokt</li>
+              <li>Ovay iuop</li>
+              <li>Liure wey</li>
+            </ul>
+          </li>
+          <li>
+            Ipsum
+          </li>
+        </ul>
+      </div>
     </section>
     <section class='misc' id='misc'>
       <h1>Miscellaneous</h1>
@@ -337,37 +375,117 @@
     </section>
     <section class='tables' id='tables'>
       <h1>Tables &amp; Lists</h1>
-      <div class='table'>
-        <table>
-          <thead>
-            <tr>
-              <td>A</td>
-              <td>Semibold caps</td>
-              <td class='asc'>Ascending sort</td>
-              <td class='des'>Descending sort</td>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>A</td>
-              <td>Regular items</td>
-              <td>Lorem</td>
-              <td>Ipsum</td>
-            </tr>
-            <tr>
-              <td>A</td>
-              <td>Alternating row colours</td>
-              <td>Mauris</td>
-              <td>Enum</td>
-            </tr>
-            <tr>
-              <td>A</td>
-              <td><a href='#'>There could be elements</a></td>
-              <td><input placeholder='Like a text box'></td>
-              <td><button class='inline-button'>Or a button</button></td>
-            </tr>
-          </tbody>
-        </table>
+      <div id='normal-table'>
+        <h4>Table with a head and sortable columns</h4>
+        <div class='table'>
+          <table>
+            <thead>
+              <tr>
+                <td>
+                  <input type='checkbox' id='table-1'>
+                  <label for='table-1'><span></span></label>
+                </td>
+                <td>Semibold caps</td>
+                <td class='asc'>Ascending sort</td>
+                <td class='des'>Descending sort</td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <input type='checkbox' id='table-2'>
+                  <label for='table-2'><span></span></label>
+                </td>
+                <td>Regular items</td>
+                <td>Lorem</td>
+                <td>Ipsum</td>
+              </tr>
+              <tr>
+                <td>
+                  <input type='checkbox' id='table-3'>
+                  <label for='table-3'><span></span></label>
+                </td>
+                <td>Alternating row colours</td>
+                <td>Mauris</td>
+                <td>Enum</td>
+              </tr>
+              <tr>
+                <td>
+                  <input type='checkbox' id='table-4'>
+                  <label for='table-4'><span></span></label>
+                </td>
+                <td><a href='#'>There could be elements</a></td>
+                <td><input placeholder='Like a text box'></td>
+                <td><button class='inline-button'>Or a button</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <pre class='code-example'>&lt;div class='table'&gt;  &lt;!-- For horizontal scrolling on small screens --&gt;
+    &lt;table&gt;
+      &lt;thead&gt;
+        &lt;tr&gt;
+          &lt;td class='asc'&gt;Ascending sort&lt;/td&gt;
+          &lt;td class='des'&gt;Descending sort&lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/thead&gt;
+      &lt;tbody&gt;
+        &lt;tr&gt;
+          &lt;td&gt;Lorem&lt;/td&gt;
+          &lt;td&gt;Ipsum&lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/tbody&gt;
+    &lt;/table&gt;
+  &lt;/div&gt;</pre>
+      </div>
+      <div id='sortable-list'>
+        <h4>Sortable list</h4>
+        <div class='sortable'>
+          <header>
+            <span>Header</span>
+            <span class='right'>Eius</span>
+          </header>
+          <ul>
+            <li>
+              <a href='#'>Could be links</a>
+              <span class='right'>3.2</span>
+            </li>
+            <li>
+              Or maybe not
+              <span class='right'>42</span>
+            </li>
+            <li>
+              Wow
+              <span class='right'>1.0</span>
+            </li>
+          </ul>
+        </div>
+        <pre class='code-example'>&lt;div class='sortable'&gt;
+  &lt;header&gt;
+    &lt;span&gt;Left aligned&lt;/span&gt;
+    &lt;span class='right'&gt;Right aligned&lt;/span&gt;
+  &lt;/header&gt;
+  &lt;ul&gt;
+    &lt;li&gt;
+      &lt;a href='#'&gt;Could be links&lt;/a&gt;
+      &lt;span class='right'&gt;3.2&lt;/span&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      Or maybe not
+      &lt;span class='right'&gt;42&lt;/span&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      Wow
+      &lt;span class='right'&gt;1.0&lt;/span&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;</pre>
+      </div>
+      <div id='tab-pane'>
+        <h4>Tab pane</h4>
+        <div class='tab-pane'>
+          Wow
+        </div>
       </div>
     </section>
     <section class='dialogs' id='dialogs'>

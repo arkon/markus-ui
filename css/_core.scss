@@ -225,6 +225,7 @@ fieldset {
   position: relative;
 
   legend {
+    border: none;
     width: 100%;
 
     span {
@@ -252,11 +253,15 @@ fieldset {
 
 /** Checkboxes and radio buttons */
 
-input[type='checkbox'] {
+input[type='checkbox'],
+input[type='radio'] {
   display: none;
 
+  & + label {
+    cursor: pointer;
+  }
+
   & + label span {
-    background: url(../check_radio_sheet.png) left top no-repeat;
     cursor: pointer;
     display: inline-block;
     height: 19px;
@@ -264,27 +269,25 @@ input[type='checkbox'] {
     vertical-align: middle;
     width: 19px;
   }
+}
+
+input[type='checkbox'] {
+  & + label span {
+    background: url(../img/check_radio_sheet.png) left top no-repeat;
+  }
 
   &:checked + label span {
-    background: url(../check_radio_sheet.png) -19px top no-repeat;
+    background: url(../img/check_radio_sheet.png) -19px top no-repeat;
   }
 }
 
 input[type='radio'] {
-  display: none;
-
   & + label span {
-    background: url(../check_radio_sheet.png) -38px top no-repeat;
-    cursor: pointer;
-    display: inline-block;
-    height: 19px;
-    margin: -4px 4px 0 0;
-    vertical-align: middle;
-    width: 19px;
+    background: url(../img/check_radio_sheet.png) -38px top no-repeat;
   }
 
   &:checked + label span {
-    background: url(../check_radio_sheet.png) -57px top no-repeat;
+    background: url(../img/check_radio_sheet.png) -57px top no-repeat;
   }
 }
 
@@ -349,12 +352,117 @@ input[type='radio'] {
         &:nth-child(even) {
           background-color: $light-grey;
         }
-
       }
     }
   }
 }
 
+
+/** Sortable lists */
+
+.sortable {
+  @include border-radius($radius);
+  background: $white;
+  border: 1px solid $grey;
+
+  header {
+    @include border-radius-top($radius);
+    font-weight: 600;
+    text-align: left;
+    text-transform: uppercase;
+    padding: 0.5em;
+
+  }
+
+  .right {
+    float: right;
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+
+    li {
+      background: url(../img/handle.png) 0.5em center no-repeat;
+      background-size: 12px 20px;
+      border-top: 1px solid $grey;
+      list-style: none;
+      min-height: 2.5em;
+      padding: 0.5em 0.5em 0.5em 2em;
+    }
+  }
+}
+
+
+/** Tab pane */
+
+.tab-pane {
+  @include border-radius($radius);
+  background: $light-grey;
+  border: 1px solid $blue;
+  padding: 0.5em;
+}
+
+
+/** Tags */
+
+// Dropdown
+ul.tags {
+  padding: 0;
+
+  & > li {
+    @include border-radius($radius);
+    background: $grey;
+    border: 1px solid $grey;
+    color: $white;
+    cursor: pointer;
+    display: block;
+    float: left;
+    list-style: none;
+    margin-right: 0.5em;
+    padding: 0.15em 0.6em;
+    position: relative;
+    text-transform: uppercase;
+
+    &:hover {
+      background: $white;
+      border: 1px solid $blue;
+      color: $dark-blue;
+
+      ul {
+        display: block;
+      }
+    }
+
+    ul {
+      @include border-radius($radius);
+      background: $white;
+      border: 1px solid $blue;
+      display: none;
+      padding: 0;
+      position: absolute;
+      top: 1em;
+      left: 0px;
+      width: 200px;
+
+      li {
+        color: $dark-grey;
+        list-style: none;
+        text-transform: none;
+        padding: 0.5em;
+
+        a {
+          color: $dark-grey;
+        }
+
+        &:hover {
+          background: $blue;
+          color: $white;
+        }
+      }
+    }
+  }
+}
 
 
 /** Dialog modal windows */
