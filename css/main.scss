@@ -26,6 +26,10 @@ header {
         display: inline-block;
         list-style: none;
         padding: 0 1em;
+
+        a {
+          width: auto;
+        }
       }
     }
   }
@@ -106,6 +110,7 @@ section {
 
   .circle {
     @include border-radius(100%);
+    @include transition(border-color, $time-quick);
     border: 2px solid #fff;
     display: inline-block;
     font-size: 1.2em;
@@ -116,6 +121,10 @@ section {
     text-align: center;
     vertical-align: middle;
     width: 120px;
+
+    &:hover {
+      border-color: $blue;
+    }
   }
 
   .light-text {
@@ -150,7 +159,6 @@ section {
 
   #grey {
     @extend .light-text;
-
     background: $grey;
   }
 

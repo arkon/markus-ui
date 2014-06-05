@@ -49,7 +49,7 @@
     </section>
     <section class='colours' id='colours'>
       <h1>Colours</h1>
-      <h4>Main colour pallette</h4>
+      <h4>Main colour pallette (SASS variables)</h4>
       <div id='blues'>
         <div id='lighter-blue' class='circle' title='#e8f4f2'>$lighter-blue</div>
         <div id='light-blue' class='circle' title='#cee3ea'>$light-blue</div>
@@ -319,16 +319,7 @@
     </section>
     <section class='tags' id='tags'>
       <h1>Tags</h1>
-      <div id='tags-pillbox'>
-        <h4>Pillbox</h4>
-        <ul class='pills'>
-          <li>
-            Lorem
-          </li>
-        </ul>
-      </div>
       <div id='tags-drop'>
-        <h4>Dropdown</h4>
         <ul class='tags'>
           <li>
             Verut
@@ -357,6 +348,19 @@
     <section class='nav' id='nav'>
       <h1>Navigation</h1>
       <h4>Tabs</h4>
+      <nav>
+        <ul class='main'>
+          <li><a href='#' class='active'>Home</a></li>
+          <li><a href='#'>Assignments</a></li>
+          <li><a href='#'>Users</a></li>
+        </ul>
+        <ul class='sub'>
+          <li><a href='#'>Settings</a></li>
+          <li><a href='#' class='active'>Students</a></li>
+          <li><a href='#'>Graders</a></li>
+          <li><a href='#'>Submissions</a></li>
+        </ul>
+      </nav>
       <h4>Dropdown</h4>
       <span class='dropdown'>
         Hello world
@@ -370,7 +374,7 @@
       </span>
     </section>
   </div><div class='column'>
-    <section class='typography' id ='typography'>
+    <section class='typography' id='typography'>
       <h1>Typography</h1>
       <div id='fonts'>
         <div id='open-sans'>
@@ -379,6 +383,7 @@
             <h1>Open Sans Light (300)</h1>
             <span id='regular'>Regular (400)</span>
             <span id='semibold'>Semibold (600)</span>
+            <p>$fonts</p>
             <p>
               ABCDEFGHIJKLMNOPQRSTUVWXYZ
               <br>
@@ -392,6 +397,7 @@
           <div class='example'>Aa</div>
           <div class='text'>
             <h1>Consolas</h1>
+            <p>$mono-fonts</p>
             <p>
               ABCDEFGHIJKLMNOPQRSTUVWXYZ
               <br>

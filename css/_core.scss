@@ -9,6 +9,14 @@ body {
   color: $dark-grey;
 }
 
+::selection {
+  background-color: $blue;
+}
+
+::-moz-selection {
+  background-color: $blue;
+}
+
 
 /** Code */
 pre,
@@ -385,12 +393,18 @@ only screen and (                min-resolution: 2dppx) {
 
     tbody {
       tr {
+        @include transition(all, $time-quick);
+
         &:nth-child(odd) {
           background-color: $white;
         }
 
         &:nth-child(even) {
           background-color: $light-grey;
+        }
+
+        &:hover {
+          background: $lighter-blue;
         }
       }
     }
@@ -423,12 +437,21 @@ only screen and (                min-resolution: 2dppx) {
     padding: 0;
 
     li {
+      @include transition(all, $time-quick);
       background: url(../img/handle.png) 0.5em center no-repeat;
       background-size: 12px 20px;
       border-top: 1px solid $grey;
       list-style: none;
       min-height: 2.5em;
       padding: 0.5em 0.5em 0.5em 2em;
+
+      &:hover {
+        background-color: $lighter-blue;
+      }
+
+      &:last-child {
+        @include border-radius-bottom($radius);
+      }
     }
   }
 }
@@ -446,21 +469,10 @@ only screen and (                min-resolution: 2dppx) {
 
 /** Tags */
 
-// Pillbox
-ul.pills {
-  @include border-radius($radius);
-  background: $light-grey;
-  border: 1px solid $grey;
-  padding: 0.15em;
-
-  & > li {
-    background: $light-blue;
-    padding: 0.15em 0.6em;
-  }
-}
-
-// Dropdown
 ul.tags {
+  display: block;
+  height: 2em;
+  margin: 0;
   padding: 0;
 
   & > li {
@@ -470,14 +482,16 @@ ul.tags {
     color: $white;
     cursor: pointer;
     display: block;
+    font-size: 0.9em;
     float: left;
     list-style: none;
     margin-right: 0.5em;
-    padding: 0.15em 0.6em;
+    padding: 0 0.6em;
     position: relative;
     text-transform: uppercase;
 
     &:hover {
+      @include border-radius-bottom(0);
       background: $white;
       border: 1px solid $blue;
       color: $dark-blue;
@@ -488,21 +502,22 @@ ul.tags {
     }
 
     ul {
-      @include border-radius($radius);
+      @include border-radius-bottom($radius);
       background: $white;
       border: 1px solid $blue;
       display: none;
       padding: 0;
       position: absolute;
-      top: 1em;
-      left: 0px;
+      top: 0.6em;
+      left: -1px;
       width: 200px;
+      z-index: 9000;
 
       li {
         color: $dark-grey;
         list-style: none;
         text-transform: none;
-        padding: 0.5em;
+        padding: 0.4em 0.5em;
 
         a {
           color: $dark-grey;
@@ -551,19 +566,22 @@ ul.tags {
   width: 250px;
 
   &:hover {
+    @include border-radius-bottom(0);
+
     ul {
       display: block;
     }
   }
 
   ul {
-    @include border-radius($radius);
+    @include border-radius-bottom($radius);
     background: $white;
     border: 1px solid $dark-blue;
     display: none;
     left: -1px;
     margin: 0;
     padding: 0;
+    top: 2em;
     position: absolute;
     text-align: left;
     width: 250px;
@@ -586,6 +604,47 @@ ul.tags {
       font-size: 0.9em;
       font-weight: 600;
       text-transform: uppercase;
+    }
+  }
+}
+
+
+/** Menus */
+
+nav {
+  ul {
+    margin: 0;
+    padding: 0;
+
+    li {
+      display: inline-block;
+      text-align: center;
+
+      a {
+        display: block;
+        height: 3em;
+        line-height: 3em;
+        min-width: 10em;
+        padding: 0 1em;
+      }
+    }
+  }
+
+  ul.main {
+    border-bottom: 1px solid $blue;
+
+    .active {
+      background-color: $blue;
+      color: $white;
+    }
+  }
+
+  ul.sub {
+    background-color: $blue;
+
+    .active {
+      background-color: $white;
+      color: $blue;
     }
   }
 }
