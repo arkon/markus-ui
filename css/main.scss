@@ -107,7 +107,6 @@ section {
       width: 200px;
     }
   }
-
 }
 
 .forms {
@@ -138,8 +137,15 @@ section {
     }
 
     #normal-text-fields {
-      float: right;
       width: 40%;
+    }
+
+    #large-text-fields,
+    #normal-text-fields {
+      @include breakpoint(small) {
+        display: block;
+        width: 100%;
+      }
     }
   }
 
@@ -158,12 +164,20 @@ section {
     }
 
     #normal-buttons {
-      width: 20%;
+      width: 35%;
     }
 
     #inline-buttons {
-      float: right;
       width: 20%;
+    }
+
+    #large-buttons,
+    #normal-buttons,
+    #inline-buttons {
+      @include breakpoint(small) {
+        display: block;
+        width: 100%;
+      }
     }
 
     #hover {
@@ -195,6 +209,7 @@ section {
 
     .example {
       font-size: 8em;
+      line-height: 1em;
       width: 160px;
     }
 
@@ -203,6 +218,8 @@ section {
     }
 
     #open-sans {
+      margin-top: 1em;
+
       .example,
       .text {
         font-weight: 300;
@@ -225,6 +242,21 @@ section {
 
     #consolas, #consolas h1 {
       font-family: $mono-fonts !important;
+    }
+  }
+
+  pre {
+    @include border-radius($radius);
+    background: $white;
+    padding: 0.5em;
+  }
+
+  hgroup {
+    h1,
+    h2,
+    h3,
+    h4 {
+      margin: 0.6em 0;
     }
   }
 }
