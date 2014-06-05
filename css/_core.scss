@@ -163,6 +163,15 @@ textarea {
   }
 }
 
+textarea {
+  height: 2.5em;
+  resize: none;
+
+  &:focus {
+    height: 7.5rem;
+  }
+}
+
 
 /** Buttons */
 
