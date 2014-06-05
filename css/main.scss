@@ -31,6 +31,19 @@ header {
 
 h4 {
   margin-bottom: 0.5em;
+  border-bottom: 1px solid #999;
+}
+
+pre {
+  display: block;
+}
+
+.code-example {
+  @include border-radius($radius);
+  border: 1px solid $light-blue;
+  background: $white;
+  font-size: 0.8em;
+  padding: 0.5em;
 }
 
 .col {
@@ -40,7 +53,7 @@ h4 {
 
 .column {
   @extend .col;
-  padding: 2em 4em;
+  padding: 2em 3em;
   width: 50%;
 
   @include breakpoint(medium) {
@@ -51,6 +64,19 @@ h4 {
 
   & > section {
     margin-bottom: 5em;
+  }
+}
+
+table {
+  width: 100%;
+
+  td {
+    padding-right: 1.5em;
+    vertical-align: top;
+
+    &:last-child {
+      padding-right: 0;
+    }
   }
 }
 
@@ -65,7 +91,8 @@ section {
 .colours {
   text-align: center;
 
-  h1 {
+  h1,
+  h4 {
     text-align: left;
   }
 
@@ -125,10 +152,15 @@ section {
   }
 
   #alerts {
-    .alert {
-      display: inline-block;
-      margin: 1em 0.5em;
-      width: 200px;
+    margin-top: 1em;
+
+    .code-example {
+      text-align: left;
+    }
+
+    div {
+      // margin: 1em 0.5em;
+      // width: 200px;
     }
   }
 }
@@ -156,21 +188,21 @@ section {
       @extend .col;
     }
 
-    #large-text-fields {
-      width: 50%
-    }
+    // #large-text-fields {
+    //   width: 50%
+    // }
 
-    #normal-text-fields {
-      width: 40%;
-    }
+    // #normal-text-fields {
+    //   width: 40%;
+    // }
 
-    #large-text-fields,
-    #normal-text-fields {
-      @include breakpoint(small) {
-        display: block;
-        width: 100%;
-      }
-    }
+    // #large-text-fields,
+    // #normal-text-fields {
+    //   @include breakpoint(small) {
+    //     display: block;
+    //     width: 100%;
+    //   }
+    // }
   }
 
   #buttons {
@@ -267,12 +299,6 @@ section {
     }
   }
 
-  pre {
-    @include border-radius($radius);
-    background: $white;
-    padding: 0.5em;
-  }
-
   hgroup {
     h1,
     h2,
@@ -280,11 +306,15 @@ section {
     h4 {
       margin: 0.6em 0;
     }
+
+    h4 {
+      border: none;
+    }
   }
 }
 
-.about,
-.about a {
+.foot,
+.foot a {
   color: $grey;
   text-align: right;
 }

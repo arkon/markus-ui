@@ -164,6 +164,7 @@ textarea {
 
 
 /** Buttons */
+
 button {
   @include background-gradient($white, $light-grey);
   @include border-radius($radius);
@@ -216,14 +217,35 @@ fieldset {
   @include box-shadow(0 3px 0 $grey);
   background: $white;
   border: none;
-  padding: 2.5em 1em 1em;
+  padding: 3.5em 1.5em 1.5em;
   position: relative;
 
   legend {
     @extend h3;
     position: absolute;
-    top: 0em;
+    top: 0.5em;
     left: 1em;
+  }
+}
+
+
+/** Checkboxes and radio buttons */
+
+input[type='checkbox'] {
+  display: none;
+
+  & + label span {
+    background: url(../check_radio_sheet.png) left top no-repeat;
+    cursor: pointer;
+    display: inline-block;
+    height: 19px;
+    margin: -1px 4px 0 0;
+    vertical-align: middle;
+    width: 19px;
+  }
+
+  &:checked + label span {
+    background: url(../check_radio_sheet.png) -19px top no-repeat;
   }
 }
 
@@ -231,59 +253,65 @@ fieldset {
 /** Tables */
 
 .table {
+  border-left: 1px solid $grey;
+  border-right: 1px solid $grey;
   overflow-x: auto;
   width: 100%;
-}
 
-table {
-  border-left: 1px solid $grey;
-  border-top: 1px solid $grey;
-  width: 100%;
+  table {
+    border-top: 1px solid $grey;
+    width: 100%;
 
-  thead {
-    background-color: $light-grey;
-    border-bottom: 2px solid $grey;
-    font-weight: 600;
-    text-transform: uppercase;
+    thead {
+      background-color: $light-grey;
+      border-bottom: 2px solid $grey;
+      font-weight: 600;
+      text-transform: uppercase;
 
-    .asc,
-    .des {
-      cursor: pointer;
+      .asc,
+      .des {
+        cursor: pointer;
 
-      &::after {
-        font-size: 0.75em;
-        padding-left: 0.5em;
+        &::after {
+          font-size: 0.75em;
+          padding-left: 0.5em;
+        }
+      }
+
+      .asc::after, {
+        content: "▲";
+      }
+
+      .des::after {
+        content: "▼";
       }
     }
 
-    .asc::after, {
-      content: "▲";
-    }
-
-    .des::after {
-      content: "▼";
-    }
-  }
-
-  tr {
-    border-bottom: 1px solid $grey;
-
-    td {
-      border-right: 1px solid $grey;
-      padding: 0.5em 1em;
-    }
-  }
-
-  tbody {
     tr {
-      &:nth-child(odd) {
-        background-color: $white;
-      }
+      border-bottom: 1px solid $grey;
 
-      &:nth-child(even) {
-        background-color: $light-grey;
-      }
+      td {
+        border-right: 1px solid $grey;
+        padding: 0.5em 1em;
+        vertical-align: middle;
 
+        &:last-child {
+          border-right: none;
+        }
+      }
+    }
+
+    tbody {
+      tr {
+        &:nth-child(odd) {
+          background-color: $white;
+        }
+
+        &:nth-child(even) {
+          background-color: $light-grey;
+        }
+
+      }
     }
   }
 }

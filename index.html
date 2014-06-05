@@ -17,79 +17,195 @@
     <h3>Style Guide</h3>
     <nav>
       <ul>
+        <li><a href='#about'>About</a></li>
         <li><a href='#colours'>Colours</a></li>
-        <li><a href='#typography'>Typography</a></li>
         <li><a href='#forms'>Forms</a></li>
-        <li><a href='#tables'>Tables &amp; Lists</a></li>
         <li><a href='#tags'>Tags</a></li>
-        <li><a href='#dialogs'>Dialogs</a></li>
         <li><a href='#misc'>Miscellaneous</a></li>
+        <li><a href='#typography'>Typography</a></li>
+        <li><a href='#tables'>Tables &amp; Lists</a></li>
+        <li><a href='#dialogs'>Dialogs</a></li>
       </ul>
     </nav>
   </header>
   <div class='column'>
+    <section class='about' id='about'>
+      <p>
+        This is the official UI style guide for the MarkUs project.
+      </p>
+      <p>
+        You'll find various core elements used around MarkUs on this page, along with helpful code snippets so you can use them easily. Please adhere to the style shown on this page in order to keep MarkUs as cohesive as possible.
+      </p>
+      <p>
+        The styles for the core elements shown on this page can be <a href='css/_core.scss'>downloaded here as a SCSS partial file</a>. Simply import it into another SCSS file!
+      </p>
+    </section>
     <section class='colours' id='colours'>
       <h1>Colours</h1>
       <h4>Main colour pallette</h4>
       <div id='blues'>
-        <div id='lighter-blue' class='circle'>#e8f4f2</div>
-        <div id='light-blue' class='circle'>#cee3ea</div>
-        <div id='blue' class='circle'>#89b1dd</div>
-        <div id='dark-blue' class='circle'>#3e6ab3</div>
+        <div id='lighter-blue' class='circle' title='#e8f4f2'>$lighter-blue</div>
+        <div id='light-blue' class='circle' title='#cee3ea'>$light-blue</div>
+        <div id='blue' class='circle' title='#89b1dd'>$blue</div>
+        <div id='dark-blue' class='circle' title='#3e6ab3'>$dark-blue</div>
       </div>
       <div id='greys'>
-        <div id='white' class='circle'>#ffffff</div>
-        <div id='light-grey' class='circle'>#eeeeee</div>
-        <div id='grey' class='circle'>#e8f4f2</div>
-        <div id='dark-grey' class='circle'>#e8f4f2</div>
+        <div id='white' class='circle' title='#ffffff'>$white</div>
+        <div id='light-grey' class='circle' title='#eeeeee'>$light-grey</div>
+        <div id='grey' class='circle' title='#e8f4f2'>$grey</div>
+        <div id='dark-grey' class='circle' title='#e8f4f2'>$dark-grey</div>
       </div>
       <div id='alerts'>
-      <h4>Alerts</h4>
-        <div id='red' class='alert error'>#ffb4b4 / #fe2a2a</div>
-        <div id='yellow' class='alert warning'>#fafdaa / #dde426</div>
-        <div id='green' class='alert success'>#81d881 / #23c023</div>
+        <h4>Alerts</h4>
+        <table>
+          <tr>
+            <td>
+              <pre class='code-example'>&lt;div class='error'&gt; Error &lt;/div&gt;</pre>
+            </td>
+            <td>
+              <pre class='code-example'>&lt;div class='warning'&gt; Warning &lt;/div&gt;</pre>
+            </td>
+            <td>
+              <pre class='code-example'>&lt;div class='success'&gt; Success &lt;/div&gt;</pre>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class='error' title='#ffb4b4 / #fe2a2a'>$red / $light-red</div>
+            </td>
+            <td>
+              <div class='warning' title='#fafdaa / #dde426'>$yellow / $light-yellow</div>
+            </td>
+            <td>
+              <div class='success' title='#81d881 / #23c023'>$green / $light-green</div>
+            </td>
+          </tr>
+        </table>
       </div>
     </section>
     <section class='forms' id='forms'>
       <h1>Forms</h1>
       <section id='text-fields'>
-        <section id='large-text-fields'>
-          <h4>Large text fields</h4>
-          <input class='large-text' placeholder='Placeholder text'>
-          <input id='hover' class='large-text' placeholder='Hovering over text field'>
-          <input id='active' class='large-text' placeholder='Placeholder text' value='Active text field'>
-          <input class='large-text' placeholder='Disabled text field' disabled>
-        </section>
-        <section id='normal-text-fields'>
-          <h4>Normal text fields</h4>
-          <input placeholder='Placeholder text'>
-          <input id='hover' placeholder='Hovering over text field'>
-          <input id='active' placeholder='Placeholder text' value='Active text field'>
-          <input placeholder='Disabled text field' disabled>
-        </section>
+        <table>
+          <tr>
+            <td>
+              <h4>Large text fields</h4>
+            </td>
+            <td>
+              <h4>Normal text fields</h4>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <pre class='code-example'>&lt;input class='large-text' placeholder='Username'&gt;</pre>
+            </td>
+            <td>
+              <pre class='code-example'>&lt;input placeholder='Username'&gt;</pre>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <input class='large-text' placeholder='Placeholder text'>
+            </td>
+            <td>
+              <input placeholder='Placeholder text'>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <input id='hover' class='large-text' placeholder='Hovering over text field'>
+            </td>
+            <td>
+              <input id='hover' placeholder='Hovering over text field'>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <input id='active' class='large-text' placeholder='Placeholder text' value='Active text field'>
+            </td>
+            <td>
+              <input id='active' placeholder='Placeholder text' value='Active text field'>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <input class='large-text' placeholder='Disabled text field' disabled>
+            </td>
+            <td>
+              <input placeholder='Disabled text field' disabled>
+            </td>
+          </tr>
+        </table>
       </section>
       <section id='buttons'>
-        <section id='large-buttons'>
-          <h4>Large buttons</h4>
-          <button class='large-button'>Large button</button>
-          <button id='hover' class='large-button'>Hovering</button>
-          <button id='pressed' class='large-button'>Pressed</button>
-          <button class='large-button' disabled>Disabled</button>
-        </section>
-        <section id='normal-buttons'>
-          <h4>Normal buttons</h4>
-          <button>Normal button</button>
-          <button id='hover'>Hovering</button>
-          <button id='pressed'>Pressed</button>
-          <button disabled>Disabled</button>
-        </section>
-        <section id='inline-buttons'>
-          <h4>Inline buttons</h4>
-          <button class='inline-button'>Inline</button>
-          <button id='hover' class='inline-button'>Hovering</button>
-          <button id='pressed' class='inline-button'>Pressed</button>
-          <button class='inline-button' disabled>Disabled</button>
-        </section>
+        <table>
+          <tr>
+            <td>
+              <h4>Large buttons</h4>
+            </td>
+            <td>
+              <h4>Normal buttons</h4>
+            </td>
+            <td>
+              <h4>Inline buttons</h4>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <pre class='code-example'>&lt;button class='large-button'&gt; Log in &lt;/button&gt;</pre>
+            </td>
+            <td>
+              <pre class='code-example'>&lt;button&gt; Log in &lt;/button&gt;</pre>
+            </td>
+            <td>
+              <pre class='code-example'>&lt;button class='inline-button'&gt; Log in &lt;/button&gt;</pre>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <button class='large-button'>Large button</button>
+            </td>
+            <td>
+              <button>Normal button</button>
+            </td>
+            <td>
+              <button class='inline-button'>Inline</button>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <button id='hover' class='large-button'>Hovering</button>
+            </td>
+            <td>
+              <button id='hover'>Hovering</button>
+            </td>
+            <td>
+              <button id='hover' class='inline-button'>Hovering</button>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <button id='pressed' class='large-button'>Pressed</button>
+            </td>
+            <td>
+             <button id='pressed'>Pressed</button>
+            </td>
+            <td>
+              <button id='pressed' class='inline-button'>Pressed</button>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <button class='large-button' disabled>Disabled</button>
+            </td>
+            <td>
+              <button disabled>Disabled</button>
+            </td>
+            <td>
+              <button class='inline-button' disabled>Disabled</button>
+            </td>
+          </tr>
+        </table>
       </section>
       <section id='other'>
         <section id='checkboxes'>
@@ -100,7 +216,12 @@
           <fieldset>
             <legend>This is a fieldset</legend>
             <div id='checkboxes'>
-
+              <input type="checkbox" id="checked" name="cc" checked>
+              <label for="checked"><span></span>Checked</label>
+              <input type="checkbox" id="hover" name="cc">
+              <label for="hover"><span></span>Hover</label>
+              <input type="checkbox" id="unchecked" name="cc">
+              <label for="unchecked"><span></span>Unchecked</label>
             </div>
             <div id='radio-buttons'>
               <input type="radio" name="radio" value="">Male
@@ -112,9 +233,12 @@
     </section>
     <section class='tags' id='tags'>
       <h1>Tags</h1>
+      <h4>Pillbox</h4>
+      <h4>Dropdown</h4>
     </section>
     <section class='misc' id='misc'>
       <h1>Miscellaneous</h1>
+      <h4>Dropdown</h4>
     </section>
   </div><div class='column'>
     <section class='typography' id ='typography'>
@@ -149,6 +273,7 @@
           </div>
         </div>
       </div>
+      <h4>Regular text</h4>
       <p>
         Body: 16px baseline, 1.5em (24px) line height, 1.125em (18px) paragraph, normal weight (400).
       </p>
@@ -158,8 +283,10 @@
       <p>
         Neutra keytar Pinterest, cray typewriter mixtape kale chips Portland freegan readymade plaid meh Banksy. Truffaut post-ironic gentrify, artisan farm-to-table selvage Marfa messenger bag Shoreditch freegan lo-fi <a href='#'>disrupt gluten-free butcher Banksy</a>.
       </p>
-      <pre>&lt;p&gt;Code should be shown in a monospace font like this. Use some plugin to perform syntax highlighting and HTML cleanup.&lt;/p&gt;</pre>
-      <p>You can use show <span class='code'>inline code</span> too.</p>
+      <h4>Code</h4>
+      <pre class='code-example'>&lt;pre&gt;Code should be shown in a monospace font like this. Use an additional plugin of your choice to perform syntax highlighting and HTML cleanup.&lt;/pre&gt;</pre>
+      <p>You can show inline code using <span class='code code-example'>&lt;span class='code'&gt; the code class &lt;/span&gt;</span>.</p>
+      <h4>Headings</h4>
       <hgroup>
         <h1>Heading 1: 2.5em (40px), light (300)</h1>
         <h2>Heading 2: 2em (32px), light (300)</h2>
@@ -220,7 +347,7 @@
         </div>
       </div>
     </section>
-    <section class='about' id='about'>
+    <section class='foot'>
       <p><a href='http://www.markusproject.org/'>The MarkUs Project</a></p>
       <p><a href='http://www.echeung.me/'>Designed by Eugene Cheung</a></p>
       <p>Last updated June 2014</p>
