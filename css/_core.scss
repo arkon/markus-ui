@@ -74,7 +74,7 @@ h3 {
 }
 
 h4 {
-  font: 400 1em $fonts;
+  font: 600 1em $fonts;
   margin: 0;
 }
 
@@ -181,6 +181,7 @@ button {
     @include box-shadow(inset 0 -1px 0 $grey, 0 1px 0 $light-grey);
     border-color: $dark-blue;
     color: $dark-blue;
+    top: 1px;
   }
 
   &:active {
@@ -250,6 +251,7 @@ table {
       cursor: pointer;
 
       &::after {
+        font-size: 0.75em;
         padding-left: 0.5em;
       }
     }
