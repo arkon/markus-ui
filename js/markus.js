@@ -7,4 +7,7 @@ $(document).ready(function() {
   $('#open-modal').click(function() {
     $('.example-dialog').trigger('openModal');
   });
+
+  // Tab pane
+  $('#tabs').tabs();
 });

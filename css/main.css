@@ -856,6 +856,41 @@ input[type='radio']:checked + label span::after {
   background: #eeeeee;
   border: 1px solid #89b1dd;
   padding: 0.5em; }
+  .tab-pane ul {
+    margin: 0;
+    padding: 0; }
+    .tab-pane ul li {
+      -webkit-border-top-right-radius: 5px;
+      -webkit-border-top-left-radius: 5px;
+      -moz-border-radius-topright: 5px;
+      -moz-border-radius-topleft: 5px;
+      border-top-right-radius: 5px;
+      border-top-left-radius: 5px;
+      background: #cee3ea;
+      display: inline-block;
+      list-style: none; }
+      .tab-pane ul li a {
+        -webkit-border-top-right-radius: 5px;
+        -webkit-border-top-left-radius: 5px;
+        -moz-border-radius-topright: 5px;
+        -moz-border-radius-topleft: 5px;
+        border-top-right-radius: 5px;
+        border-top-left-radius: 5px;
+        display: inline-block;
+        padding: 0.15em 1.5em; }
+      .tab-pane ul li.ui-tabs-active {
+        background: white; }
+        .tab-pane ul li.ui-tabs-active a {
+          color: #464646; }
+  .tab-pane .ui-tabs-panel {
+    -webkit-border-bottom-right-radius: 5px;
+    -webkit-border-bottom-left-radius: 5px;
+    -moz-border-radius-bottomright: 5px;
+    -moz-border-radius-bottomleft: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    background: white;
+    padding: 0.5em; }
 
 /** Tags */
 ul.tags {
@@ -867,6 +902,11 @@ ul.tags {
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;
+    -webkit-transition: all 0.3s ease 0s;
+    -moz-transition: all 0.3s ease 0s;
+    -ms-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
     background: #8d8d8d;
     border: 1px solid #8d8d8d;
     color: white;
@@ -910,13 +950,15 @@ ul.tags {
       ul.tags > li ul li {
         color: #464646;
         list-style: none;
-        text-transform: none;
-        padding: 0.4em 0.5em; }
+        text-transform: none; }
         ul.tags > li ul li a {
-          color: #464646; }
+          color: #464646;
+          display: block;
+          padding: 0.4em 0.5em; }
+          ul.tags > li ul li a:hover {
+            color: white; }
         ul.tags > li ul li:hover {
-          background: #89b1dd;
-          color: white; }
+          background: #89b1dd; }
 
 /** Dialog modal windows */
 .dialog {
@@ -986,16 +1028,22 @@ ul.tags {
         border-bottom-left-radius: 5px; }
     .dropdown ul li.section {
       padding: 0.25em; }
-    .dropdown ul li:not(.section):hover, .dropdown ul li:not(.section).active {
-      background: #89b1dd;
-      color: white; }
-    .dropdown ul li:not(.section).active {
-      padding: 0.5em 1em; }
-    .dropdown ul li:not(.section) a {
-      display: block;
-      padding: 0.5em 1em; }
-      .dropdown ul li:not(.section) a:hover {
+    .dropdown ul li:not(.section) {
+      -webkit-transition: all 0.3s ease 0s;
+      -moz-transition: all 0.3s ease 0s;
+      -ms-transition: all 0.3s ease 0s;
+      -o-transition: all 0.3s ease 0s;
+      transition: all 0.3s ease 0s; }
+      .dropdown ul li:not(.section):hover, .dropdown ul li:not(.section).active {
+        background: #89b1dd;
         color: white; }
+      .dropdown ul li:not(.section).active {
+        padding: 0.5em 1em; }
+      .dropdown ul li:not(.section) a {
+        display: block;
+        padding: 0.5em 1em; }
+        .dropdown ul li:not(.section) a:hover {
+          color: white; }
     .dropdown ul .section {
       font-size: 0.9em;
       font-weight: 600;
@@ -1006,24 +1054,47 @@ nav ul {
   margin: 0;
   padding: 0; }
   nav ul li {
+    -webkit-border-top-right-radius: 5px;
+    -webkit-border-top-left-radius: 5px;
+    -moz-border-radius-topright: 5px;
+    -moz-border-radius-topleft: 5px;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
     display: inline-block;
     text-align: center; }
     nav ul li a {
+      -webkit-border-top-right-radius: 5px;
+      -webkit-border-top-left-radius: 5px;
+      -moz-border-radius-topright: 5px;
+      -moz-border-radius-topleft: 5px;
+      border-top-right-radius: 5px;
+      border-top-left-radius: 5px;
       display: block;
       height: 3em;
       line-height: 3em;
       min-width: 10em;
       padding: 0 1em; }
 nav ul.main {
-  border-bottom: 1px solid #89b1dd; }
+  border-bottom: 2px solid #89b1dd; }
+  nav ul.main li:hover,
   nav ul.main .active {
     background-color: #89b1dd;
     color: white; }
+    nav ul.main li:hover a,
+    nav ul.main .active a {
+      color: white; }
 nav ul.sub {
-  background-color: #89b1dd; }
+  background-color: #89b1dd;
+  border-bottom: 2px solid white; }
+  nav ul.sub li:hover,
   nav ul.sub .active {
     background-color: white;
-    color: #89b1dd; }
+    color: #3a6ab3; }
+    nav ul.sub li:hover a,
+    nav ul.sub .active a {
+      color: #3a6ab3; }
+  nav ul.sub a {
+    color: white; }
 
 body {
   background: #efedec; }

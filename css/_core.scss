@@ -476,6 +476,38 @@ input[type='radio'] {
   background: $light-grey;
   border: 1px solid $blue;
   padding: 0.5em;
+
+  ul {
+    margin: 0;
+    padding: 0;
+
+    li {
+      @include border-radius-top($radius);
+      background: $light-blue;
+      display: inline-block;
+      list-style: none;
+
+      a {
+        @include border-radius-top($radius);
+        display: inline-block;
+        padding: 0.15em 1.5em;
+      }
+
+      &.ui-tabs-active {
+        background: $white;
+
+        a {
+          color: $dark-grey;
+        }
+      }
+    }
+  }
+
+  .ui-tabs-panel {
+    @include border-radius-bottom($radius);
+    background: $white;
+    padding: 0.5em;
+  }
 }
 
 
@@ -489,6 +521,7 @@ ul.tags {
 
   & > li {
     @include border-radius($radius);
+    @include transition(all, $time-quick);
     background: $grey;
     border: 1px solid $grey;
     color: $white;
@@ -529,15 +562,19 @@ ul.tags {
         color: $dark-grey;
         list-style: none;
         text-transform: none;
-        padding: 0.4em 0.5em;
 
         a {
           color: $dark-grey;
+          display: block;
+          padding: 0.4em 0.5em;
+
+          &:hover {
+            color: $white;
+          }
         }
 
         &:hover {
           background: $blue;
-          color: $white;
         }
       }
     }
@@ -613,6 +650,8 @@ ul.tags {
     }
 
     li:not(.section) {
+      @include transition(all, $time-quick);
+
       &:hover,
       &.active {
         background: $blue;
@@ -650,10 +689,12 @@ nav {
     padding: 0;
 
     li {
+      @include border-radius-top($radius);
       display: inline-block;
       text-align: center;
 
       a {
+        @include border-radius-top($radius);
         display: block;
         height: 3em;
         line-height: 3em;
@@ -664,20 +705,35 @@ nav {
   }
 
   ul.main {
-    border-bottom: 1px solid $blue;
+    border-bottom: 2px solid $blue;
 
+    li:hover,
     .active {
       background-color: $blue;
       color: $white;
+
+      a {
+        color: $white;
+      }
     }
   }
 
   ul.sub {
     background-color: $blue;
+    border-bottom: 2px solid $white;
 
+    li:hover,
     .active {
       background-color: $white;
-      color: $blue;
+      color: $dark-blue;
+
+      a {
+        color: $dark-blue;
+      }
+    }
+
+    a {
+      color: $white;
     }
   }
 }
