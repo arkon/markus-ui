@@ -12,7 +12,7 @@
   <![endif]-->
   <script src='js/jquery-2.1.1.min.js'></script>
   <script src='js/jquery.sortable.min.js'></script>
-  <script src='js/script.js'></script>
+  <script src='js/markus.js'></script>
 </head>
 <body>
   <header>
@@ -37,10 +37,10 @@
         This is the official UI style guide for <a href='http://www.markusproject.org/'>the MarkUs Project</a>.
       </p>
       <p>
-        You'll find various core elements used around MarkUs on this page, along with helpful code snippets so you can use them easily. Please adhere to the style shown on this page in order to keep MarkUs as cohesive as possible.
+        You'll find various core elements used around MarkUs on this page, along with helpful code snippets so you can use them easily. Please adhere to the style shown on this page in order to keep MarkUs as cohesive as possible. You're also free to use the styles provided here in any of your own projects.
       </p>
       <p>
-        The production version of the styles for the core elements shown on this page can be <a href='#'>downloaded here as a package of SCSS partial files and required JavaScript files</a>. You can simply import <span class='code'>_core.scss</span> into another SCSS file! You'll also need to include the JavaScript files into the head of your HTML files.
+        The assets for the elements shown on this page can be <a href='#'>downloaded here as a package of SCSS partials, images, and JavaScript files</a>. You'll need to make sure that the JavaScript files are included in the head of your HTML files and the image references in <span class='code'>_core.scss</span> are correct. You can then simply import <span class='code'>_core.scss</span> into another SCSS file (<span class='code code-example'>@import 'core';</span>).
       </p>
       <p>
         If you're interested in seeing the code, you're welcome to check out <a href='https://github.com/arkon94/markus-style'>the GitHub repo</a>.
@@ -226,10 +226,15 @@
         <section id='fieldset'>
           <fieldset>
             <legend><span>This is a fieldset</span></legend>
+            <p>These custom check boxes and radio buttons will likely not be used in MarkUs due to extra <span class='code'>&lt;span&gt;&lt;/span&gt;</span>s required.
             <div id='checkboxes'>
               <h4>Check boxes</h4>
               <div class='div-table'>
                 <table>
+                  <tr>
+                    <pre class='code-example'>&lt;input type='checkbox' id='chk-checked' name='cc'&gt;
+&lt;label for='chk-checked'&gt;&lt;span&gt;&lt;/span&gt;Checkbox&lt;/label&gt;</pre>
+                  </tr>
                   <tr>
                     <td>
                       <input type='checkbox' id='chk-checked' name='cc' checked>
@@ -266,6 +271,10 @@
                 <h4>Radio buttons</h4>
                 <div class='div-table'>
                   <table>
+                  <tr>
+                    <pre class='code-example'>&lt;input type='radio' id='rd-checked' name='rd'&gt;
+&lt;label for='rd-checked'&gt;&lt;span&gt;&lt;/span&gt;Radio button&lt;/label&gt;</pre>
+                  </tr>
                     <tr>
                       <td>
                         <input type='radio' id='rd-checked' name='radio' checked>
