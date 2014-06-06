@@ -234,11 +234,15 @@ section {
   }
 }
 
+.nav {
+  #dropdown {
+    margin-top: 2em;
+    height: 12em;  // To allow for dropdown to be seen
+  }
+}
 
 .typography {
   #fonts {
-    // white-space: pre-line;
-
     h1 {
       border: none;
       padding: 0;
@@ -301,6 +305,16 @@ section {
     h4 {
       border: none;
     }
+  }
+}
+
+.dialogs {
+  #preview {
+    width: 100%;
+  }
+
+  #open-modal {
+    cursor: pointer;
   }
 }
 

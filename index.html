@@ -12,6 +12,7 @@
   <![endif]-->
   <script src='js/jquery-2.1.1.min.js'></script>
   <script src='js/jquery.sortable.min.js'></script>
+  <script src='js/jquery.easyModal.js'></script>
   <script src='js/markus.js'></script>
 </head>
 <body>
@@ -226,7 +227,7 @@
         <section id='fieldset'>
           <fieldset>
             <legend><span>This is a fieldset</span></legend>
-            <p>These custom check boxes and radio buttons will likely not be used in MarkUs due to extra <span class='code'>&lt;span&gt;&lt;/span&gt;</span>s required.
+            <p>These custom check boxes and radio buttons will likely not be used in MarkUs due to extra <span class='code'>&lt;span&gt;&lt;/span&gt;</span>s required. There are also some issues with the encoding of the check marks and dots in IE.</p>
             <div id='checkboxes'>
               <h4>Check boxes</h4>
               <div class='div-table'>
@@ -370,17 +371,19 @@
           <li><a href='#'>Submissions</a></li>
         </ul>
       </nav>
-      <h4>Dropdown</h4>
-      <span class='dropdown'>
-        Hello world
-        <ul>
-          <li class='section'>Quick links</li>
-          <li>Liure wey</li>
-          <li>Ovay iuop</li>
-          <li>Ish mein brokt</li>
-          <li>Separo enum</li>
-        </ul>
-      </span>
+      <div id='dropdown'>
+        <h4>Dropdown</h4>
+        <span class='dropdown'>
+          Hello world
+          <ul>
+            <li class='section'>Quick links</li>
+            <li class='active'>Liure wey</li>
+            <li><a href='#'>Ovay iuop</a></li>
+            <li class='section'>Assignments</li>
+            <li><a href='#'>Separo enum</a></li>
+          </ul>
+        </span>
+      </div>
     </section>
   </div><div class='column'>
     <section class='typography' id='typography'>
@@ -555,11 +558,8 @@
     </section>
     <section class='dialogs' id='dialogs'>
       <h1>Dialogs</h1>
-      <aside class='dialog'>
+      <aside class='dialog' id='preview'>
         <h2>This is a dialog modal</h2>
-        <p>
-          The window should also have an overlay of <span class='code'>#464646</span> at 60%, or <span class='code'>rgba(70,70,70,.6)</span>, behind the dialog box.
-        </p>
         <p>
           The dialog has a box shadow of <span class='code'>#8d8d8d</span> at a size of 10px from the origin.
         </p>
@@ -571,9 +571,23 @@
     &lt;button&gt;Centred buttons&lt;/button&gt;
   &lt;/section&gt;
 &lt;/aside&gt;</pre>
+        <a id='open-modal'>Click here to open an example dialog modal.</a>
         <div class='dialog-actions'>
           <button>Centred buttons</button>
-          <button>Close</button>
+          <button class='close'>Close</button>
+        </div>
+      </aside>
+      <aside class='dialog example-dialog'>
+        <h2>Check out this awesome example dialog!</h2>
+        <p>
+          The close button should have a class called <span class='code code-example'>close</span>. You can also click on the overlay behind this dialog modal to close it.
+        </p>
+        <pre class='code-example'>$('.dialog-selector').easyModal();
+$('#open-link-selector').click(function() {
+  $('.dialog-selector').trigger('openModal');
+});</pre>
+        <div class='dialog-actions'>
+          <button class='close'>Close</button>
         </div>
       </aside>
     </section>

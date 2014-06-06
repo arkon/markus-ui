@@ -720,7 +720,7 @@ input[type='radio']:checked + label span::after {
   display: block;
   font-size: 1.2em;
   margin-left: -1px;
-  margin-top: -4px;
+  line-height: 15px;
   text-align: center;
   text-shadow: 0 1px 0 #3a6ab3;
   width: 22px; }
@@ -903,7 +903,7 @@ ul.tags {
       display: none;
       padding: 0;
       position: absolute;
-      top: 0.6em;
+      top: 0.65em;
       left: -1px;
       width: 200px;
       z-index: 9000; }
@@ -927,7 +927,9 @@ ul.tags {
   -moz-box-shadow: 0 0 10px #8d8d8d;
   box-shadow: 0 0 10px #8d8d8d;
   background: white;
-  padding: 2.5em 1.5em; }
+  padding: 2.5em 1.5em;
+  width: 50%;
+  z-index: 10000; }
   .dialog .dialog-actions {
     text-align: center;
     margin-top: 1.5em; }
@@ -974,12 +976,25 @@ ul.tags {
     text-align: left;
     width: 250px; }
     .dropdown ul li {
-      list-style: none;
-      padding: 0.5em; }
-    .dropdown ul li:not(.section) {
-      padding-left: 1em; }
-      .dropdown ul li:not(.section):hover {
-        background: #89b1dd;
+      list-style: none; }
+      .dropdown ul li:last-child {
+        -webkit-border-bottom-right-radius: 5px;
+        -webkit-border-bottom-left-radius: 5px;
+        -moz-border-radius-bottomright: 5px;
+        -moz-border-radius-bottomleft: 5px;
+        border-bottom-right-radius: 5px;
+        border-bottom-left-radius: 5px; }
+    .dropdown ul li.section {
+      padding: 0.25em; }
+    .dropdown ul li:not(.section):hover, .dropdown ul li:not(.section).active {
+      background: #89b1dd;
+      color: white; }
+    .dropdown ul li:not(.section).active {
+      padding: 0.5em 1em; }
+    .dropdown ul li:not(.section) a {
+      display: block;
+      padding: 0.5em 1em; }
+      .dropdown ul li:not(.section) a:hover {
         color: white; }
     .dropdown ul .section {
       font-size: 0.9em;
@@ -1166,6 +1181,10 @@ section > h1 {
 .forms #other td {
   padding: 0.5em 0; }
 
+.nav #dropdown {
+  margin-top: 2em;
+  height: 12em; }
+
 .typography #fonts h1 {
   border: none;
   padding: 0; }
@@ -1205,6 +1224,11 @@ fieldset legend .typography hgroup span,
   margin: 0.6em 0; }
 .typography hgroup h4 {
   border: none; }
+
+.dialogs #preview {
+  width: 100%; }
+.dialogs #open-modal {
+  cursor: pointer; }
 
 footer {
   text-align: right; }
