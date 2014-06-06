@@ -8,7 +8,7 @@
           border-radius: $radius;
 }
 
-/* Only the top left and top right corners. */
+/** Only the top left and top right corners. */
 @mixin border-radius-top($radius) {
   -webkit-border-top-right-radius: $radius;
    -webkit-border-top-left-radius: $radius;
@@ -18,7 +18,7 @@
            border-top-left-radius: $radius;
 }
 
-/* Only the bottom left and bottom right corners. */
+/** Only the bottom left and bottom right corners. */
 @mixin border-radius-bottom($radius) {
   -webkit-border-bottom-right-radius: $radius;
    -webkit-border-bottom-left-radius: $radius;
@@ -28,14 +28,14 @@
            border-bottom-left-radius: $radius;
 }
 
-/* Multiple box-shadows can be defined, each separated by a comma. */
+/** Multiple box-shadows can be defined, each separated by a comma. */
 @mixin box-shadow($shadow...) {
   -webkit-box-shadow: $shadow;
      -moz-box-shadow: $shadow;
           box-shadow: $shadow;
 }
 
-/* A linear gradient going from top to bottom. */
+/** A linear gradient going from top to bottom. */
 @mixin background-gradient($start, $end) {
   background: -webkit-gradient(linear, 0% 0%, 0% 100%, from($start), to($end));
   background: -webkit-linear-gradient(top, $start, $end);
@@ -46,8 +46,8 @@
   background-color: $start;
 }
 
-/* The transition uses a timing function of "ease" and a 0s delay by default,
-   if no values are provided. */
+/** The transition uses a timing function of "ease" and a 0s delay by default,
+    if no values are provided. */
 @mixin transition($property, $duration, $timing-function:"ease", $delay:"0s") {
   -webkit-transition: $property $duration #{$timing-function} #{$delay};
      -moz-transition: $property $duration #{$timing-function} #{$delay};
@@ -56,13 +56,21 @@
           transition: $property $duration #{$timing-function} #{$delay};
 }
 
+@mixin transform($value...) {
+  -webkit-transform: $value;
+     -moz-transform: $value;
+      -ms-transform: $value;
+       -o-transform: $value;
+          transform: $value;
+}
 
-/* For easier size breakpoints. */
+/** For easier size breakpoints. */
 $breakpoints: (
   'tiny':   ( max-width:  360px ),
   'small':  ( max-width:  500px ),
-  'medium': ( max-width:  992px ),
-  'large':  ( max-width: 1200px )
+  'mobile': ( max-width:  745px ),
+  'medium': ( max-width:  990px ),
+  'large':  ( max-width: 1040px )
 );
 
 @mixin breakpoint($name) {
@@ -72,7 +80,7 @@ $breakpoints: (
     }
   }
   @else {
-    @media ($name) {
+    @media ("#{$name}") {
       @content;
     }
   }

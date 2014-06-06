@@ -438,13 +438,13 @@ table {
 /**
  * Various mixins that allow for easier cross-browser support.
  */
-/* Only the top left and top right corners. */
-/* Only the bottom left and bottom right corners. */
-/* Multiple box-shadows can be defined, each separated by a comma. */
-/* A linear gradient going from top to bottom. */
-/* The transition uses a timing function of "ease" and a 0s delay by default,
-   if no values are provided. */
-/* For easier size breakpoints. */
+/** Only the top left and top right corners. */
+/** Only the bottom left and bottom right corners. */
+/** Multiple box-shadows can be defined, each separated by a comma. */
+/** A linear gradient going from top to bottom. */
+/** The transition uses a timing function of "ease" and a 0s delay by default,
+    if no values are provided. */
+/** For easier size breakpoints. */
 /** Main */
 body {
   font: 400 16px/24px "Open Sans", "Lucida Grande", Verdana, Arial, sans-serif;
@@ -509,11 +509,11 @@ p + p {
 
 /** Links */
 a {
-  -webkit-transition: all 0.3s ease 0s;
-  -moz-transition: all 0.3s ease 0s;
-  -ms-transition: all 0.3s ease 0s;
-  -o-transition: all 0.3s ease 0s;
-  transition: all 0.3s ease 0s;
+  -webkit-transition: all 0.25s ease 0s;
+  -moz-transition: all 0.25s ease 0s;
+  -ms-transition: all 0.25s ease 0s;
+  -o-transition: all 0.25s ease 0s;
+  transition: all 0.25s ease 0s;
   color: #3a6ab3;
   text-decoration: none; }
   a:hover {
@@ -546,11 +546,11 @@ textarea {
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
-  -webkit-transition: all 0.3s ease 0s;
-  -moz-transition: all 0.3s ease 0s;
-  -ms-transition: all 0.3s ease 0s;
-  -o-transition: all 0.3s ease 0s;
-  transition: all 0.3s ease 0s;
+  -webkit-transition: all 0.25s ease 0s;
+  -moz-transition: all 0.25s ease 0s;
+  -ms-transition: all 0.25s ease 0s;
+  -o-transition: all 0.25s ease 0s;
+  transition: all 0.25s ease 0s;
   background: #eeeeee;
   border: 1px solid #8d8d8d;
   color: #464646;
@@ -596,11 +596,11 @@ button {
   -webkit-box-shadow: inset 0 -1px 0 #8d8d8d;
   -moz-box-shadow: inset 0 -1px 0 #8d8d8d;
   box-shadow: inset 0 -1px 0 #8d8d8d;
-  -webkit-transition: all 0.3s ease 0s;
-  -moz-transition: all 0.3s ease 0s;
-  -ms-transition: all 0.3s ease 0s;
-  -o-transition: all 0.3s ease 0s;
-  transition: all 0.3s ease 0s;
+  -webkit-transition: all 0.25s ease 0s;
+  -moz-transition: all 0.25s ease 0s;
+  -ms-transition: all 0.25s ease 0s;
+  -o-transition: all 0.25s ease 0s;
+  transition: all 0.25s ease 0s;
   border: 1px solid #89b1dd;
   color: #464646;
   font: 400 1em "Open Sans", "Lucida Grande", Verdana, Arial, sans-serif;
@@ -704,11 +704,11 @@ input[type='radio'] + label span {
   -webkit-box-shadow: inset 0 0 5px #eeeeee;
   -moz-box-shadow: inset 0 0 5px #eeeeee;
   box-shadow: inset 0 0 5px #eeeeee;
-  -webkit-transition: all 0.3s ease 0s;
-  -moz-transition: all 0.3s ease 0s;
-  -ms-transition: all 0.3s ease 0s;
-  -o-transition: all 0.3s ease 0s;
-  transition: all 0.3s ease 0s;
+  -webkit-transition: all 0.25s ease 0s;
+  -moz-transition: all 0.25s ease 0s;
+  -ms-transition: all 0.25s ease 0s;
+  -o-transition: all 0.25s ease 0s;
+  transition: all 0.25s ease 0s;
   background-color: white;
   border: 1px solid #89b1dd; }
 input[type='checkbox'] + label:hover span,
@@ -791,11 +791,11 @@ input[type='radio']:checked + label span::after {
         .table table tr td:last-child {
           border-right: none; }
     .table table tbody tr {
-      -webkit-transition: all 0.3s ease 0s;
-      -moz-transition: all 0.3s ease 0s;
-      -ms-transition: all 0.3s ease 0s;
-      -o-transition: all 0.3s ease 0s;
-      transition: all 0.3s ease 0s; }
+      -webkit-transition: all 0.25s ease 0s;
+      -moz-transition: all 0.25s ease 0s;
+      -ms-transition: all 0.25s ease 0s;
+      -o-transition: all 0.25s ease 0s;
+      transition: all 0.25s ease 0s; }
       .table table tbody tr:nth-child(odd) {
         background-color: white; }
       .table table tbody tr:nth-child(even) {
@@ -827,11 +827,11 @@ input[type='radio']:checked + label span::after {
     margin: 0;
     padding: 0; }
     .sortable ul li {
-      -webkit-transition: all 0.3s ease 0s;
-      -moz-transition: all 0.3s ease 0s;
-      -ms-transition: all 0.3s ease 0s;
-      -o-transition: all 0.3s ease 0s;
-      transition: all 0.3s ease 0s;
+      -webkit-transition: all 0.25s ease 0s;
+      -moz-transition: all 0.25s ease 0s;
+      -ms-transition: all 0.25s ease 0s;
+      -o-transition: all 0.25s ease 0s;
+      transition: all 0.25s ease 0s;
       background: url(../img/handle@2x.png) 0.5em center no-repeat;
       background-size: 12px 20px;
       border-top: 1px solid #8d8d8d;
@@ -877,6 +877,7 @@ input[type='radio']:checked + label span::after {
         border-top-right-radius: 5px;
         border-top-left-radius: 5px;
         display: inline-block;
+        outline: none;
         padding: 0.15em 1.5em; }
       .tab-pane ul li.ui-tabs-active {
         background: white; }
@@ -902,11 +903,11 @@ ul.tags {
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;
-    -webkit-transition: all 0.3s ease 0s;
-    -moz-transition: all 0.3s ease 0s;
-    -ms-transition: all 0.3s ease 0s;
-    -o-transition: all 0.3s ease 0s;
-    transition: all 0.3s ease 0s;
+    -webkit-transition: all 0.25s ease 0s;
+    -moz-transition: all 0.25s ease 0s;
+    -ms-transition: all 0.25s ease 0s;
+    -o-transition: all 0.25s ease 0s;
+    transition: all 0.25s ease 0s;
     background: #8d8d8d;
     border: 1px solid #8d8d8d;
     color: white;
@@ -969,8 +970,8 @@ ul.tags {
   -moz-box-shadow: 0 0 10px #8d8d8d;
   box-shadow: 0 0 10px #8d8d8d;
   background: white;
+  max-width: 100%;
   padding: 2.5em 1.5em;
-  width: 50%;
   z-index: 10000; }
   .dialog .dialog-actions {
     text-align: center;
@@ -1029,11 +1030,11 @@ ul.tags {
     .dropdown ul li.section {
       padding: 0.25em; }
     .dropdown ul li:not(.section) {
-      -webkit-transition: all 0.3s ease 0s;
-      -moz-transition: all 0.3s ease 0s;
-      -ms-transition: all 0.3s ease 0s;
-      -o-transition: all 0.3s ease 0s;
-      transition: all 0.3s ease 0s; }
+      -webkit-transition: all 0.25s ease 0s;
+      -moz-transition: all 0.25s ease 0s;
+      -ms-transition: all 0.25s ease 0s;
+      -o-transition: all 0.25s ease 0s;
+      transition: all 0.25s ease 0s; }
       .dropdown ul li:not(.section):hover, .dropdown ul li:not(.section).active {
         background: #89b1dd;
         color: white; }
@@ -1140,7 +1141,7 @@ pre {
 .column {
   padding: 2em 3em;
   width: 50%; }
-  @media (max-width: 992px) {
+  @media (max-width: 745px) {
     .column {
       display: block;
       padding: 2em;
@@ -1175,11 +1176,11 @@ section > h1 {
     -webkit-border-radius: 100%;
     -moz-border-radius: 100%;
     border-radius: 100%;
-    -webkit-transition: border-color 0.3s ease 0s;
-    -moz-transition: border-color 0.3s ease 0s;
-    -ms-transition: border-color 0.3s ease 0s;
-    -o-transition: border-color 0.3s ease 0s;
-    transition: border-color 0.3s ease 0s;
+    -webkit-transition: border-color 0.25s ease 0s;
+    -moz-transition: border-color 0.25s ease 0s;
+    -ms-transition: border-color 0.25s ease 0s;
+    -o-transition: border-color 0.25s ease 0s;
+    transition: border-color 0.25s ease 0s;
     border: 2px solid #fff;
     display: inline-block;
     font-size: 1.2em;
@@ -1274,7 +1275,7 @@ section > h1 {
 .typography #fonts #open-sans #regular,
 .typography #fonts #open-sans #semibold {
   font-size: 1.75em; }
-  @media (max-width: 992px) {
+  @media (max-width: 745px) {
     .typography #fonts #open-sans #regular,
     .typography #fonts #open-sans #semibold {
       display: block;
@@ -1300,9 +1301,11 @@ fieldset legend .typography hgroup span,
   width: 100%; }
 .dialogs #open-modal {
   cursor: pointer; }
+.dialogs .example-dialog {
+  width: 500px; }
 
 footer {
   text-align: right; }
-  @media (max-width: 992px) {
+  @media (max-width: 745px) {
     footer {
       text-align: center; } }

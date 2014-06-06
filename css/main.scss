@@ -1,4 +1,4 @@
-@import 'core';
+@import 'markus';
 
 body {
   background: #efedec;
@@ -62,7 +62,7 @@ pre {
   padding: 2em 3em;
   width: 50%;
 
-  @include breakpoint(medium) {
+  @include breakpoint(mobile) {
     display: block;
     padding: 2em;
     width: 100%;
@@ -273,7 +273,7 @@ section {
       #semibold {
         font-size: 1.75em;
 
-        @include breakpoint(medium) {
+        @include breakpoint(mobile) {
           display: block;
           margin-top: 0.5em;
         }
@@ -316,12 +316,16 @@ section {
   #open-modal {
     cursor: pointer;
   }
+
+  .example-dialog {
+    width: 500px;
+  }
 }
 
 footer {
   text-align: right;
 
-  @include breakpoint(medium) {
+  @include breakpoint(mobile) {
     text-align: center;
   }
 }

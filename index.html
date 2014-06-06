@@ -44,7 +44,7 @@
         You'll find various core elements used around MarkUs on this page, along with helpful code snippets so you can use them easily. Please adhere to the style shown on this page in order to keep MarkUs as cohesive as possible. You're also free to use the styles provided here in any of your own projects.
       </p>
       <p>
-        The assets for the elements shown on this page can be <a href='#'>downloaded here as a package of SCSS partials, images, and JavaScript files</a>. You'll need to make sure that the JavaScript files are included in the head of your HTML files and the image references in <span class='code'>_core.scss</span> are correct. You can then simply import <span class='code'>_core.scss</span> into another SCSS file (<span class='code code-example'>@import 'core';</span>).
+        The assets for the elements shown on this page can be <a href='#'>downloaded here as a package of SCSS partials, images, and JavaScript files</a>. You'll need to make sure that the JavaScript files are included in the head of your HTML files and the image references in <span class='code'>_markus.scss</span> are correct. You can then simply import <span class='code'>_markus.scss</span> into another SCSS file (<span class='code code-example'>@import 'markus';</span>).
       </p>
       <p>
         If you're interested in seeing the code, you're welcome to check out <a href='https://github.com/arkon94/markus-style'>the GitHub repo</a>.
@@ -546,6 +546,9 @@
         <p>
           Make sure to include <span class='code'>js/jquery.sortable.min.js</span> if you want to use this!
         </p>
+        <p>
+          Unfortunately, this doesn't seem to work on touchscreens.
+        </p>
         <div class='sortable'>
           <header>
             <span>Header</span>
@@ -593,22 +596,41 @@
         <h4>Tab pane</h4>
         <div class='tab-pane' id='tabs'>
           <ul>
-            <li><a href='#tab-1'><span>Tab 1</span></a></li>
-            <li><a href='#tab-2'><span>Tab 2</span></a></li>
-            <li><a href='#tab-3'><span>Tab 3</span></a></li>
+            <li><a href='#tab-1'><span>Tabs!</span></a></li>
+            <li><a href='#tab-2'><span>HTML Markup</span></a></li>
+            <li><a href='#tab-3'><span>JavaScript</span></a></li>
           </ul>
           <div id='tab-1'>
-            <p>First tab is active by default:</p>
-            <pre class='code-example'>$('#tabs').tabs();</pre>
+            <p>
+              This is based on jQuery UI's tabs widget, so be sure to include <span class='code'>jquery-ui.js</span> in your page.
+            </p>
           </div>
           <div id='tab-2'>
-            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
-            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+            <p>
+              Make sure the tab anchors' hash references correspond to the ids of the tab content divs!
+            </p>
+            <pre class='code-example'>&lt;div class='tab-pane' id='tabs'&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href='#tab-1'&gt;&lt;span&gt;Tabs!&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href='#tab-2'&gt;&lt;span&gt;HTML Markup&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href='#tab-3'&gt;&lt;span&gt;JavaScript&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;div id='tab-1'&gt;
+    &lt;p&gt;This is based on jQuery UI's tabs widget.&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div id='tab-2'&gt;
+    &lt;p&gt;Some more content.&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div id='tab-3'&gt;
+    &lt;p&gt;Lorem ipsum.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
           </div>
           <div id='tab-3'>
-            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
-            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
-            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+            <p>
+              Simply instantiate the tabs like so:
+            </p>
+            <pre class='code-example'>$('#tabs').tabs();</pre>
           </div>
         </div>
       </div>
@@ -642,6 +664,9 @@
         <h2>Check out this awesome example dialog!</h2>
         <p>
           The close button should have a class called <span class='code code-example'>close</span>. You can also click on the overlay behind this dialog modal to close it.
+        </p>
+        <p>
+          The modal windows should have a defined width.
         </p>
         <pre class='code-example'>$('.dialog-selector').easyModal();
 $('#open-link-selector').click(function() {
