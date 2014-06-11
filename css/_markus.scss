@@ -180,9 +180,20 @@ textarea {
   }
 }
 
+select {
+  @include border-radius($radius);
+  background: none;
+  border: 1px solid $light-blue;
+  margin: 5px;
+  padding-left: 5px;
+}
+
 
 /** Buttons */
 
+input[type='button'],
+input[type='submit'],
+input[type='reset'],
 button {
   @include background-gradient($white, $light-grey);
   @include border-radius($radius);
@@ -274,6 +285,7 @@ fieldset {
 input[type='checkbox'],
 input[type='radio'] {
   display: none;
+  min-width: 30px;
 
   & + label {
     cursor: pointer;
@@ -368,6 +380,7 @@ input[type='radio'] {
       background-color: $light-grey;
       border-bottom: 2px solid $grey;
       font-weight: 600;
+      text-align: left;
       text-transform: uppercase;
 
       .asc,
@@ -392,6 +405,7 @@ input[type='radio'] {
     tr {
       border-bottom: 1px solid $grey;
 
+      th,
       td {
         border-right: 1px solid $grey;
         padding: 0.5em 1em;

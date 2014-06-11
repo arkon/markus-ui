@@ -44,12 +44,12 @@
         You'll find various core elements used around MarkUs on this page, along with helpful code snippets so you can use them easily. Please adhere to the style shown on this page in order to keep MarkUs as cohesive as possible. You're also free to use the styles provided here in any of your own projects.
       </p>
       <p>
-        The assets for the elements shown on this page can be <a href='https://github.com/arkon94/markus-style/raw/gh-pages/markus-ui-1.0.zip'>downloaded here as a package of SCSS partials, images, and JavaScript files</a>. You'll need to make sure that the JavaScript files are included in the head of your HTML files and the image references in <span class='code'>_markus.scss</span> are correct. You can then simply import <span class='code'>_markus.scss</span> into another SCSS file (<span class='code code-example'>@import 'markus';</span>).
+        The assets for the elements shown on this page can be <a href='https://github.com/arkon94/markus-style/raw/gh-pages/markus-ui-1.1.zip'>downloaded here as a package of SCSS partials, images, and JavaScript files</a>. You'll need to make sure that the JavaScript files are included in the head of your HTML files and the image references in <span class='code'>_markus.scss</span> are correct. You can then simply import <span class='code'>_markus.scss</span> into another SCSS file (<span class='code code-example'>@import 'markus';</span>).
       </p>
       <p>
         If you're interested in seeing the code, you're welcome to check out <a href='https://github.com/arkon94/markus-style'>the GitHub repo</a>.
       </p>
-      <p>Last updated June 2014.</p>
+      <p>Last updated June 11 2014.</p>
     </section>
 
     <section class='colours' id='colours'>
@@ -382,25 +382,45 @@
             </ul>
           </li>
         </ul>
+        <pre class='code-example'>&lt;ul class='tags'&gt;
+  &lt;li&gt;
+    Verut
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href='#'&gt;Liure wey&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href='#'&gt;Ovay iuop&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</pre>
       </div>
     </section>
 
     <section class='nav' id='nav'>
       <h1>Navigation</h1>
-      <h4>Tabs</h4>
-      <nav>
-        <ul class='main'>
-          <li><a href='#' class='active'>Home</a></li>
-          <li><a href='#'>Assignments</a></li>
-          <li><a href='#'>Users</a></li>
-        </ul>
-        <ul class='sub'>
-          <li><a href='#'>Settings</a></li>
-          <li><a href='#' class='active'>Students</a></li>
-          <li><a href='#'>Graders</a></li>
-          <li><a href='#'>Submissions</a></li>
-        </ul>
-      </nav>
+      <div id='nav-tabs'>
+        <h4>Tabs</h4>
+        <nav>
+          <ul class='main'>
+            <li><a href='#' class='active'>Home</a></li>
+            <li><a href='#'>Assignments</a></li>
+            <li><a href='#'>Users</a></li>
+          </ul>
+          <ul class='sub'>
+            <li><a href='#'>Settings</a></li>
+            <li><a href='#' class='active'>Students</a></li>
+            <li><a href='#'>Graders</a></li>
+            <li><a href='#'>Submissions</a></li>
+          </ul>
+        </nav>
+        <pre class='code-example'>&lt;nav&gt;
+  &lt;ul class='main'&gt;
+    &lt;li&gt;&lt;a href='#' class='active'&gt;Home&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href='#'&gt;Assignments&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;ul class='sub'&gt;
+    &lt;li&gt;&lt;a href='#'&gt;Settings&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;</pre>
+      </div>
       <div id='dropdown'>
         <h4>Dropdown</h4>
         <span class='dropdown'>
@@ -413,6 +433,16 @@
             <li><a href='#'>Separo enum</a></li>
           </ul>
         </span>
+        <pre class='code-example'>&lt;span class='dropdown'&gt;
+  Title
+  &lt;ul&gt;
+    &lt;li class='section'&gt;Quick links&lt;/li&gt;
+    &lt;li class='active'&gt;Liure wey&lt;/li&gt;
+    &lt;li&gt;&lt;a href='#'&gt;Ovay iuop&lt;/a&gt;&lt;/li&gt;
+    &lt;li class='section'&gt;Assignments&lt;/li&gt;
+    &lt;li&gt;&lt;a href='#'&gt;Separo enum&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/span&gt;</pre>
       </div>
     </section>
   </div><div class='column'>
@@ -483,13 +513,13 @@
           <table>
             <thead>
               <tr>
-                <td>
+                <th>
                   <input type='checkbox' id='table-1'>
                   <label for='table-1'><span></span></label>
-                </td>
-                <td>Semibold caps</td>
-                <td class='asc'>Ascending sort</td>
-                <td class='des'>Descending sort</td>
+                </th>
+                <th>Semibold caps</th>
+                <th class='asc'>Ascending sort</th>
+                <th class='des'>Descending sort</th>
               </tr>
             </thead>
             <tbody>
@@ -527,8 +557,8 @@
     &lt;table&gt;
       &lt;thead&gt;
         &lt;tr&gt;
-          &lt;td class='asc'&gt;Ascending sort&lt;/td&gt;
-          &lt;td class='des'&gt;Descending sort&lt;/td&gt;
+          &lt;th class='asc'&gt;Ascending sort&lt;/th&gt;
+          &lt;th class='des'&gt;Descending sort&lt;/th&gt;
         &lt;/tr&gt;
       &lt;/thead&gt;
       &lt;tbody&gt;
